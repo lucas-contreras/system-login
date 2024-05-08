@@ -10,7 +10,7 @@ CREATE TABLE [dbo].[Users](
 	[Email] [nvarchar](100) NOT NULL,
 	[Active] [bit] NOT NULL,
 	[Deleted] [bit] NOT NULL,
-    [IsTemporal] [bit] NOT NULL,
+	[IsTemporal] [bit] NOT NULL,
 	[CreatedDate] [datetime2](7) NOT NULL,
 	[UpdatedDate] [datetime2](7) NULL,
 	[DeletedDate] [datetime2](7) NULL,
@@ -54,7 +54,7 @@ CREATE TABLE [dbo].[UserPasswords](
 	[Password] [nvarchar](500) NOT NULL,
 	[PasswordTemp] [nvarchar](500) NULL,
 	[ExpireWhen] [datetime2](7) NULL,
-	[MaxLoginAttemps] [smallint] NOT NULL,
+	[MaxLoginAttempts] [smallint] NOT NULL,
 	[SetupNewPassword] [bit] NOT NULL,
 	[SetupSecurityQuestion] [bit] NOT NULL,
  CONSTRAINT [PK_UserPasswords] PRIMARY KEY CLUSTERED ([Id] ASC),
@@ -158,7 +158,7 @@ GO
 
 CREATE TABLE [dbo].[GlobalConfig](
 	[Id] [int] IDENTITY(1,1) NOT NULL,
-	[AttempsToLogin] [smallint] NOT NULL,
+	[AttemptsToLogin] [smallint] NOT NULL,
 	[CheckMinCharacters] [bit] NOT NULL,
 	[RequireMayusAndMin] [bit] NOT NULL,
 	[RequireNumberAndChars] [bit] NOT NULL,
